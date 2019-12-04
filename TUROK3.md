@@ -144,7 +144,7 @@ typedef struct CVector3_t
 } CVector3;
 ```
 
-##### CQuatern_t
+##### CQuatern
 
 ```c
 typedef struct CQuatern_t
