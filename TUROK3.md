@@ -4,11 +4,13 @@
 
 ###### **Notes**
 
+###### The game was compiled with O3
 ###### Values that begin with unk_ have not been cross referenced with CEngine source, and are thus unknown.
 
 #### Character CPlayer pointers
 These are the addresses for the player-character's data.
 ###### Joshua's has a different, but similar struct. Offsets for his struct are incorrect. This may be the case for Danielle vs Joseph; untested. Based on my observations, what I think happens is that Joshua's CPlayer structure is initialized during the opening cutscene, then trashed just before Danny or Joseph is choesn.
+###### Starting addresses may be about 20 bytes off
 | Address  | Character |
 |----------|:----------|
 |0x8068F450| Danielle  |
@@ -26,8 +28,46 @@ These are the addresses for the player-character's data.
 
 | Address|Type|Name|Description|Character|
 |----------|----------------------|--------------------------|--------------------------------------|-|
+|0x80114974| u32                  | unk_CutsceneBlackBars    | Toggles black bars that are seen in cutscenes   |
+|0x801149E0| int                  | screen_width             | Current X resolutuion                           |
+|0x801149E4| int                  | screen_height            | Current Y resolutuion                           |
+|0x801149E8| float                | unk_StretchX             | X stretch amount for the UI?                    |
+|0x801149EC| float                | unk_StretchY             | Y stretch amount for the UI?                    |
+|0x801149F0| int                  | video_mode               | Current video mode index                        |
+|0x801149F4| int                  | old_mode                 | Last video mode index                           |
+|0x801149F8| int                  | BlackoutCounter          | Time to black the screen, used when changing res|
+|0x801149FC| int                  | filter                   | I think this toggles the filters?               |
+|0x80114A00| int                  | unk_IsLowRes             | 1 when low-res                                  |
+|0x80114A04| int                  | deflicker                | I think this toggles interlaced video?          |
+|0x80114A08| int[2]               | nModes                   | Number of video modes for NTSC/PAL?             |
+|0x80114A10| int[2][5][7]         | VideoVals                | Video settings for resolutions NTSC/PAL         |
+|0x80114AB8| RenderParams[3]      | RenderVals               | RenderParams for each resolution option         |
 |0x8013D8B0| float                | refresh_rate             | Game speed and physics scale to this            |
-|0x801659CC| int                  | m_Difficulty             | Game difficulty. See: TODO                      |
+|0x801659B0| u8                   | m_bStereo                | Toggles stereo audio                            |
+|0x801659B1| u8                   | m_MusicVolume            | Volume level of music                           |
+|0x801659B2| u8                   | m_SfxVolume              | Volume level of sound effects                   |
+|0x801659B2| u8                   | m_SpeechVolume           | Volume level of speech                          |
+|0x801659BB| u8                   | unk_DeathmatchRadar      | Deathmatch Radar mode See: TODO                 |
+|0x801659BC| u8                   | unk_video_mode           | Copy of video mode                              |
+|0x801659C0| u32                  | unk_m_Mode               | Current game mode; probably a copy              |
+|0x801659C4| u32                  | unk_unlockedSecrets      | Currently unlcoked cheats. Bitfield             |
+|0x801659C8| u32                  | unk_Secrets              | Currently toggled cheats. Bitfield              |
+|0x801659CC| int                  | m_Difficulty             | Game difficulty See: TODO                       |
+|0x80165B10| u32                  | unk_DeathmatchMusic      | Deathmatch music?                               |
+|0x80165B60| CString              | unk_CharacterName        | Character name? Player1                         |
+|0x80166080| u8                   | unk_HorzSpeed            | Horizontal look-speed Player1                   |
+|0x80166081| u8                   | unk_VertSpeed            | Vertical look-speed Player1                     |
+|0x80166082| u16                  | unk_ControlStyle         | Current control style Player1                   |
+|0x80166084| u8                   | unk_ReverseVert          | Toggles Reverse vertical look Player1           |
+|0x80166085| u8                   | unk_LookSpring           | Toggles Look Spring Player1                     |
+|0x80166086| u8                   | unk_AutoAim              | Toggles Auto Aim Player1                        |
+|0x80166087| u8                   | unk_WeaponWheelSpeed     | Weapon Wheel Speed Player1                      |
+|0x801660C7| u8                   | unk_Draw                 | When in game, setting to 1 stops rendering      |
+|0x801660DF| u8                   | unk_RenderFlicker        | When changed, can flicker and unload the scene? |
+|0x801660E8| float                | unk_Brightness           | Brightness level                                |
+|0x801660EC| float                | unk_Volume               | Overall volume                                  |
+|0x801660F7| u8                   | unk_IntroMode            | Has to do with the intro animations             |
+|0x80166130| u32                  | unk_LagTimer             | Number of frames to lag the game for?           |
 |0x8068F4DC| float                | unk_Yaw                  | Camera yaw in radians                           |
 |0x8068F980| BOOL                 | m_bActive                | CPlayer | Joshua                                |
 |0x8068F984| int                  | m_nController            | CPlayer | Joshua                                |
@@ -102,6 +142,7 @@ These are the addresses for the player-character's data.
 | s16      | short              |
 | s64      | long long          |
 | BOOL     | int                |
+| char*    | CString            |
 
 ### Enums
 
@@ -167,6 +208,21 @@ enum unk_SightIcons {
 }
 ```
 
+#### unk_Gamemodes
+```c
+enum unk_Gamemodes {
+    SINGLE_PLAYER = 0,
+    BLOODLUST,
+    CAPTURE_THE_FLAG,
+    LAST_STAND,
+    GOLDEN_ARROW,
+    MONKEY_TAG,
+    ARSENAL_OF_WAR,
+    COLOR_TAG,
+    WEAPON_MASTER
+}
+```
+
 ### Structs/Classes
 
 ##### CVector3
@@ -183,6 +239,18 @@ typedef struct CQuatern_t
 {
 	float		x, y, z, w;
 } CQuatern;
+```
+
+#### RenderParams
+```c
+typedef struct RenderParams_t
+{
+	BOOL filter;
+	BOOL alias;
+	BOOL edge_alias;
+	BOOL inter;
+	BOOL better;
+} RenderParams;
 ```
 
 ##### CCamera
