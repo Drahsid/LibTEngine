@@ -6,136 +6,55 @@
 
 ###### The game was compiled with O3
 ###### Values that begin with unk_ have not been cross referenced with CEngine source, and are thus unknown.
+###### Data of type void, or with any paramaters (void if none) are functions
+###### Function parameters may be wrong
+###### Functions also include the physical address
 
-#### Character CPlayer pointers
-These are the addresses for the player-character's data.
-###### Joshua's has a different, but similar struct. Offsets for his struct are incorrect. This may be the case for Danielle vs Joseph; untested. Based on my observations, what I think happens is that Joshua's CPlayer structure is initialized during the opening cutscene, then trashed just before Danny or Joseph is choesn.
-| Address  | Character |
-|----------|:----------|
-|0x8068F470| Danielle  |
-|0x8068F470| Joseph    |
-|0x8068F2B0| Joshua    |
-
-
-#### Character CCamera pointers
-| Address  | Character |
-|----------|:----------|
-|0x80690A90| Danielle  |
-|0x80690A90| Joseph    |
-|0x806908D0| Joshua    |
-
-
-| Address|Type|Name|Description|Character|
+|Address|Type|Name|Description|Parameters|
 |----------|----------------------|--------------------------|--------------------------------------|-|
-|0x80114974| u32                  | unk_CutsceneBlackBars    | Toggles black bars that are seen in cutscenes        |
-|0x801149E0| int                  | screen_width             | Current X resolutuion                                |
-|0x801149E4| int                  | screen_height            | Current Y resolutuion                                |
-|0x801149E8| float                | unk_StretchX             | X stretch amount for the UI?                         |
-|0x801149EC| float                | unk_StretchY             | Y stretch amount for the UI?                         |
-|0x801149F0| int                  | video_mode               | Current video mode index                             |
-|0x801149F4| int                  | old_mode                 | Last video mode index                                |
-|0x801149F8| int                  | BlackoutCounter          | Time to black the screen, used when changing res     |
-|0x801149FC| int                  | filter                   | I think this toggles the filters?                    |
-|0x80114A00| int                  | unk_IsLowRes             | 1 when low-res                                       |
-|0x80114A04| int                  | deflicker                | I think this toggles interlaced video?               |
-|0x80114A08| int[2]               | nModes                   | Number of video modes for NTSC/PAL?                  |
-|0x80114A10| int[2][5][7]         | VideoVals                | Video settings for resolutions NTSC/PAL              |
-|0x80114AB8| RenderParams[3]      | RenderVals               | RenderParams for each resolution option              |
-|0x8013D8B0| float                | refresh_rate             | Game speed and physics scale to this                 |
-|0x801659B0| u8                   | m_bStereo                | Toggles stereo audio                                 |
-|0x801659B1| u8                   | m_MusicVolume            | Volume level of music                                |
-|0x801659B2| u8                   | m_SfxVolume              | Volume level of sound effects                        |
-|0x801659B2| u8                   | m_SpeechVolume           | Volume level of speech                               |
-|0x801659BB| u8                   | unk_DeathmatchRadar      | Deathmatch Radar mode See: TODO                      |
-|0x801659BC| u8                   | unk_video_mode           | Copy of video mode                                   |
-|0x801659C0| u32                  | unk_m_Mode               | Current game mode; probably a copy                   |
-|0x801659C4| u32                  | unk_unlockedSecrets      | Currently unlcoked cheats. Bitfield                  |
-|0x801659C8| u32                  | unk_Secrets              | Currently toggled cheats. Bitfield                   |
-|0x801659CC| int                  | m_Difficulty             | Game difficulty See [unk_Difficulty](#difficulty)    |
-|0x80165B10| u32                  | unk_DeathmatchMusic      | Deathmatch music?                                    |
-|0x80165B60| CString              | unk_CharacterName        | Character name? Player1                              |
-|0x80166080| u8                   | unk_HorzSpeed            | Horizontal look-speed Player1                        |
-|0x80166081| u8                   | unk_VertSpeed            | Vertical look-speed Player1                          |
-|0x80166082| u16                  | unk_ControlStyle         | Current control style Player1                        |
-|0x80166084| u8                   | unk_ReverseVert          | Toggles Reverse vertical look Player1                |
-|0x80166085| u8                   | unk_LookSpring           | Toggles Look Spring Player1                          |
-|0x80166086| u8                   | unk_AutoAim              | Toggles Auto Aim Player1                             |
-|0x80166087| u8                   | unk_WeaponWheelSpeed     | Weapon Wheel Speed Player1                           |
-|0x801660C7| u8                   | unk_Draw                 | When in game, setting to 1 stops rendering           |
-|0x801660DF| u8                   | unk_RenderFlicker        | When changed, can flicker and unload the scene?      |
-|0x801660E8| float                | unk_Brightness           | Brightness level                                     |
-|0x801660EC| float                | unk_Volume               | Overall volume                                       |
-|0x801660F7| u8                   | unk_IntroMode            | Has to do with the intro animations                  |
-|0x80166130| u32                  | unk_LagTimer             | Number of frames to lag the game for?                |
-|0x8068F2B0| CPlayer              | unk_m_pPlayer            | [CPlayer](#player) | Joshua                          |
-|0x8068F470| CPlayer              | unk_m_pPlayer            | [CPlayer](#player) | Danny/Joseph                    |
-|0x8068F470| CGameObjectInstance  | ca                       | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F478| CVector3             | m_vCurrent               | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F488| void*                | unk_Pointer              | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F48C| CVector3             | m_vVelocity              | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F4C0| CVector3             | m_vScale                 | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F4CC| CVector3             | m_Rot                    | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F4D8| float                | unk_m_vScale1            | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F4DC| float                | m_RotY                   | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F7D8| CGameObjectInstance  | wa                       | [CGameObjectInstance](#gameobject) | Danny/Joseph    |
-|0x8068F980| BOOL                 | m_bActive                | [CPlayer](#player) | Joshua                          |
-|0x8068F984| int                  | m_nController            | [CPlayer](#player) | Joshua                          |
-|0x8068F988| CPlayerOptions_t*    | m_pOptions               | [CPlayer](#player) | Joshua                          |
-|0x8068F98C| CCamera_t*           | m_pCamera                | [CPlayer](#player) | Joshua                          |
-|0x8068FB40| BOOL                 | m_bActive                | [CPlayer](#player) | Danny/Joseph                    |
-|0x8068FB44| int                  | m_nController            | [CPlayer](#player) | Danny/Joseph                    |
-|0x8068FB48| CPlayerOptions_t*    | m_pOptions               | [CPlayer](#player) | Danny/Joseph                    |
-|0x8068FB4C| CCamera_t*           | m_pCamera                | [CPlayer](#player) | Danny/Joseph                    |
-|0x806900CE| s16                  | m_RequestedWeapon        | [CPlayer](#player) | Joshua                          |
-|0x80690142| s16                  | m_Mode                   | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690146| s16                  | m_ModeBefore             | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069014A| s16                  | m_ModeLastFrame          | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069014C| float                | m_ModeTime               | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690150| u32                  | m_ModeLastFrameFlags     | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690154| u32                  | m_ModeBeforeFlags        | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690158| u32                  | m_ModeFlags              | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069015C| BOOL                 | m_InSun                  | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690160| float                | m_FrameIncrementScaled   | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901D0| float                | m_Speed                  | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901D4| float                | m_SideSpeed              | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901D8| float                | m_TotalSpeed             | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901DC| float                | m_YVelLastFrame          | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901E0| BOOL                 | m_bOnGround              | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901E4| float                | m_BurstSpeed             | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901E8| float                | m_BurstSideSpeed         | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901EC| float                | m_BurstTimer             | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901F0| float                | m_HandSide               | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901F4| float                | m_TimeOffGround          | [CPlayer](#player) | Danny/Joseph                    |
-|0x806901F8| CVector3             | m_vDesiredPos            | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690204| CVector3             | m_vDesiredPos (Copy)     | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690234| float                | m_DuckOffset             | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690238| BOOL                 | m_bDuckMode              | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069023C| float                | unk_yOffset              | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690240| CVector3             | m_vHeadRotOffset         | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069024C| CVector3             | m_vHeadWobbleRotOffset   | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690258| CVector3             | m_vEyeOffset             | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690278| float                | m_BreathAmp              | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069028E| s16                  | m_RequestedWeapon        | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690294| CVector3             | m_vWeaponFirePos         | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690364| int                  | m_CrossHairMode          | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690368| CVector3             | m_vOuterCrossHairPos     | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690374| CVector3             | m_vOuterCrossHairVel     | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690380| CGameObjectInstance* | m_pCrossHairTarget       | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690384| int                  | m_SightIcon              | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690388| float                | m_SightIconFrame         | [CPlayer](#player) | Danny/Joseph                    |
-|0x8069038C| CVector3             | m_vCrossHairPos          | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690398| CVector3             | m_vCrossHairVel          | [CPlayer](#player) | Danny/Joseph                    |
-|0x806903B4| BOOL                 | m_SniperMode             | [CPlayer](#player) | Danny/Joseph                    |
-|0x806903B8| u32                  | unk_HasTarget            | [CPlayer](#player) | Danny/Joseph                    |
-|0x806903C4| float                | m_ZoomBlend              | [CPlayer](#player) | Danny/Joseph                    |
-|0x806903C8| float                | m_TargetZoomBlend        | [CPlayer](#player) | Danny/Joseph                    |
-|0x80690AC8| CVector3             | m_vPos                   | [CCamera](#camera) | Danny/Joseph                    |
-|0x80690AD4| float                | unk_EyeHeight            | [CCamera](#camera) | Danny/Joseph                    |
-|0x80690B10| float                | m_PixelXScale            | [CCamera](#camera) | Danny/Joseph                    |
-|0x80690B14| float                | m_PixelYScale            | [CCamera](#camera) | Danny/Joseph                    |
-|0x80690FC0| float                | m_Fov                    | [CCamera](#camera) | Danny/Joseph                    |
-|0x80690FC4| float                | unk_m_Fov                | [CCamera](#camera) | Danny/Joseph                    |
-
+|0x80033770<br>0x00233770| void                 | CGameObjectInstance__Construct  | Constructs [CGameObjectInstance](#gameobject). See [code](#cgoiconstruct)  |CGameObjectInstance* pThis, int nObjIndex, uint32_t param_3, uint32_t param_4, uint32_t param_5, int param_6, uint32_t param_7, float RotY, CVector3 vPos, uint32_t param_12, CVector3 vScale, CVector3 vVelocity|
+|~~0x8009FFC4~~| void                 | CPlayer__Construct              | Constructs [CPlayer](#player)                         ||
+|0x80114974| u32                  | unk_CutsceneBlackBars           | Toggles black bars that are seen in cutscenes         |
+|0x801149E0| int                  | screen_width                    | Current X resolutuion                                 |
+|0x801149E4| int                  | screen_height                   | Current Y resolutuion                                 |
+|0x801149E8| float                | unk_StretchX                    | X stretch amount for the UI?                          |
+|0x801149EC| float                | unk_StretchY                    | Y stretch amount for the UI?                          |
+|0x801149F0| int                  | video_mode                      | Current video mode index                              |
+|0x801149F4| int                  | old_mode                        | Last video mode index                                 |
+|0x801149F8| int                  | BlackoutCounter                 | Time to black the screen, used when changing res      |
+|0x801149FC| int                  | filter                          | I think this toggles the filters?                     |
+|0x80114A00| int                  | unk_IsLowRes                    | 1 when low-res                                        |
+|0x80114A04| int                  | deflicker                       | I think this toggles interlaced video?                |
+|0x80114A08| int[2]               | nModes                          | Number of video modes for NTSC/PAL?                   |
+|0x80114A10| int[2][5][7]         | VideoVals                       | Video settings for resolutions NTSC/PAL               |
+|0x80114AB8| RenderParams[3]      | RenderVals                      | RenderParams for each resolution option               |
+|0x8013D8B0| float                | refresh_rate                    | Game speed and physics scale to this                  |
+|0x8013DDB4| CPlayer*             | m_pPlayer                       | Pointer to current [CPlayer](#player) structure       |
+|0x801659B0| u8                   | m_bStereo                       | Toggles stereo audio                                  |
+|0x801659B1| u8                   | m_MusicVolume                   | Volume level of music                                 |
+|0x801659B2| u8                   | m_SfxVolume                     | Volume level of sound effects                         |
+|0x801659B2| u8                   | m_SpeechVolume                  | Volume level of speech                                |
+|0x801659BB| u8                   | unk_DeathmatchRadar             | Deathmatch Radar mode See: TODO                       |
+|0x801659BC| u8                   | unk_video_mode                  | Copy of video mode                                    |
+|0x801659C0| u32                  | unk_m_Mode                      | Current game mode; probably a copy                    |
+|0x801659C4| u32                  | unk_unlockedSecrets             | Currently unlcoked cheats. Bitfield                   |
+|0x801659C8| u32                  | unk_Secrets                     | Currently toggled cheats. Bitfield                    |
+|0x801659CC| int                  | m_Difficulty                    | Game difficulty See [unk_Difficulty](#difficulty)     |
+|0x80165B10| u32                  | unk_DeathmatchMusic             | Deathmatch music?                                     |
+|0x80165B60| CString              | unk_CharacterName               | Character name? Player1                               |
+|0x80166080| u8                   | unk_HorzSpeed                   | Horizontal look-speed Player1                         |
+|0x80166081| u8                   | unk_VertSpeed                   | Vertical look-speed Player1                           |
+|0x80166082| u16                  | unk_ControlStyle                | Current control style Player1                         |
+|0x80166084| u8                   | unk_ReverseVert                 | Toggles Reverse vertical look Player1                 |
+|0x80166085| u8                   | unk_LookSpring                  | Toggles Look Spring Player1                           |
+|0x80166086| u8                   | unk_AutoAim                     | Toggles Auto Aim Player1                              |
+|0x80166087| u8                   | unk_WeaponWheelSpeed            | Weapon Wheel Speed Player1                            |
+|0x801660C7| u8                   | unk_Draw                        | When in game, setting to 1 stops rendering            |
+|0x801660DF| u8                   | unk_RenderFlicker               | When changed, can flicker and unload the scene?       |
+|0x801660E8| float                | unk_Brightness                  | Brightness level                                      |
+|0x801660EC| float                | unk_Volume                      | Overall volume                                        |
+|0x801660F7| u8                   | unk_IntroMode                   | Has to do with the intro animations                   |
+|0x80166130| u32                  | unk_LagTimer                    | Number of frames to lag the game for?                 |
 
 ## Types, Enums, and Structs/Classes
 
@@ -196,10 +115,10 @@ enum unk_WeaponId {
 }
 ```
 
-##### unk_CrossHairModes <a name="chairmodes"></a>
+##### unk_CrossHairMode <a name="chairmodes"></a>
 ```c
 //This seems to choose correlate to different graphics, and is not anything like a standard enum. Any int value fits
-enum unk_CrossHairModes {
+enum unk_CrossHairMode {
     NO_CROSSHAIR = 0,
     BORE_WEAPON = 710,
     BORE_WEAPON_FLASH = 711,
@@ -207,19 +126,19 @@ enum unk_CrossHairModes {
 }
 ```
 
-##### unk_SightIcons <a name="sighticons"></a>
+##### unk_SightIcon <a name="sightIcon"></a>
 ```c
-//This seems to be incredibly similar to unk_CrossHairModes, but less specific
-enum unk_SightIcons {
+//This seems to be incredibly similar to unk_CrossHairMode, but less specific
+enum unk_SightIcon {
     NOT_BORE = -1,
     BORE_WEAPON = 810,
     BORE_WEAPON_FLASH = 811,
 }
 ```
 
-#### unk_Gamemodes <a name="gamemodes"></a>
+#### unk_Gamemode <a name="gamemode"></a>
 ```c
-enum unk_Gamemodes {
+enum unk_Gamemode {
     SINGLE_PLAYER = 0,
     BLOODLUST,
     CAPTURE_THE_FLAG,
@@ -229,6 +148,40 @@ enum unk_Gamemodes {
     ARSENAL_OF_WAR,
     COLOR_TAG,
     WEAPON_MASTER
+}
+```
+
+#### unk_ObjectId
+```c
+//Used when consturcting a CGameObjectInstance
+enum _unk_ObjectId {
+    PlayerCharacter = 0,
+    Raptor = 2,
+    Monkey = 3,
+    Brick0 = 5,
+    Danielle = 6,
+    MP_PlayerCharacter = 7, //Possibly only humanoid characters
+    Joseph = 8,
+    Brick1 = 0x000B,
+    Brick2 = 0x000C,
+    Door = 0x0185, //Boiler room
+    ElevatorDoor = 0x018E,
+    ElevatorDoorOpen = 0x018F,
+    CubePrimitive0 = 0x019C,
+    Tentacle0 = 0x019E,
+    Tentacle1 = 0x019F,
+    Tentacle2 = 0x01A0,
+    Tentacle3 = 0x01A1,
+    PoliceHeli = 0x01BA, //Not sure what to call this
+    CubePrimitive1 = 0x01B0,
+    PoliceMobile = 0x01B9,
+    PoliceWalker = 0x01BF,
+    Crate0 = 0x025B,
+    LadderMan = 0x02B9, //Come over here, quick! I won't hurt you!
+    Hound = 0x02BD,
+    FireExtinguisher = 0x08AC, //Explodes when shot
+    BridgeBroken = 0x90C, //Debris from the bridge that breaks at the very start
+    TowerBridge = 0x090F //The one that breaks at the very start
 }
 ```
 
@@ -253,7 +206,9 @@ typedef struct CCamera_t {
 typedef struct CGameObjectInstance_t
 {
     u8 m_Type; // 0x00; Not sure exactly what this does
-    int PADDING; // 0x04; Just padding
+    u8 unk_m_State // 0x01; Only effects certain objects (for example, set to 1 to break crates)
+    s16 PADDING; // 0x02; Sometimes is set to things like 0x00FE, 0x00FF. Doesn't seem to effect anything
+    u16 m_nObjType; // 0x04; Object type. This effects many things such as the model, hit effect, etc; however, it does not effect the AI.
     CVector3 m_vPos; // 0x08; Position of the object
     void* unk_Pointer; // 0x18; Pointer to something, not sure what this is for
     CVector3 m_vVelocity; // 0x1C; Velocity of the object. This seems to be separate from the velocity used for the player character
@@ -261,7 +216,7 @@ typedef struct CGameObjectInstance_t
     CVector3 m_Rot; // 0x5C; Rotation of the object. This seems to be separate from the actual rotation in the player character
     float unk_m_vScale1; // 0x68; XYZ scale of the object. scales with m_vScale
     float m_RotY; // 0x6C; Yaw rotation of the object
-    int unk_end; // 0x364; just so I can remember the sizeof: 0x368
+    int unk_end; // 0x364; just so I can remember the sizeof: 0x360-0x368?
 } CGameObjectInstance;
 ```
 
@@ -357,5 +312,155 @@ typedef struct RenderParams_t
 } RenderParams;
 ```
 
+## Rewritten code
+###### I rewrote these from the game's disassembly. They are not likely 1:1.
 
+##### CGameObjectInstance__Construct <a name="cgoiconstruct"></a>
+This is incomplete, I need to investigate the functions called by this method to get a better understanding of it, and the CGameObjectInstance structure.
+```c
+//if unspecified, the type of a member is int
+//param_9 = vPos.x, param_10 = vPos.y, param_11 = vPos.z
+//param_13 = vScale.x, param_14 = vScale.y, param_15 = vScale.z
+//param_16 = vVelocity.x, param_17 = vVelocity.y, param_18 = vVelocity.z
+
+void CGameObjectInstance__Construct(
+    CGameObjectInstance* pThis, int nObjIndex,
+    uint32_t param_3, uint32_t param_4, uint32_t param_5, int param_6,
+    uint32_t param_7, float RotY, CVector3 vPos, uint32_t param_12, 
+    CVector3 vScale, CVector3 vVelocity
+)
+{
+    uint32_t uVar1;
+    uint32_t uVar2;
+    uint32_t uVar3;
+    uint8_t* puVar6;
+    int* piVar7;
+    uint8_t unaff_s0;
+    uint8_t unaff_s1;
+    float in_stack_000003a3;
+    float local_28;
+    float local_24;
+    float local_20;
+    uint32_t local_1c;
+
+    pThis->unk_0x144 &= 0xfffbffff;
+
+    //FUN_8027de0c possibly returns the current number of CGameObjectInstances? TODO: Investigate address 0x8013dc70 and FUN_8027de0c (0x8013dc70 seems to be the global scene address)
+    if (nObjIndex == -1) nObjIndex = FUN_8027de0c(0x8013dc70);
+    if (nObjIndex == -1) return;
+
+    //Possibly some sort of constructor? TODO: Investigate
+    FUN_802331a0(pThis, nObjIndex, (uint8_t)param_3, (uint8_t)param_4, (char)local_28, (char)local_24, (char)local_20, (char)local_1c, unaff_s0, unaff_s1, in_stack_000003a3);
+
+    pThis->m_Type = 1;
+    pThis->m_nObjType = nObjIndex;
+    pThis->unk_Pointer = param_5;
+    pThis->unk_0x14 = param_7;
+    pThis->m_RotY = RotY;
+    pThis->m_vPos = vPos;
+    pThis->unk_0x114 = param_12;
+    pThis->m_vScale = vScale;
+    pThis->m_vVelocity = vVelocity;
+    pThis->unk_0xf8 = (short)param_3;
+
+    FUN_8023b2f8(&stack0xffffffd8, pThis);
+
+    CVector3__Construct(&pThis->m_Rot, local_20, local_24, local_28);
+    pThis->unk_0x68 = local_1c; //The context of this implies that m_Rot is a Quaternion?
+    pThis->unk_0x70 = 0;
+    pThis->unk_0xfa = (short)0;
+    pThis->unk_0x14c = (short)0;
+    pThis->unk_end = 0xc7800074;
+
+    FUN_8024fe1c();
+    FUN_8024fe1c();
+    FUN_80238c80(pThis, 0); //I think this sets the animation index? TODO: Investigate
+
+    pThis->unk_0x114 &= 0xfffffbff | 0x2100;
+
+    FUN_80262768();
+
+    pThis->unk_0xb4 = (short)0;
+    pThis->unk_0xc0 = 0;
+    pThis->unk_0xbc = (uint8_t)0;
+    pThis->unk_0x14f = 0;
+
+    pThis->unk_0x114 |= 0x30000;
+
+    nObjIndex = **(int **)(pThis->unk_Pointer);
+
+    if (((nObjIndex == 0) || ((pThis->unk_0x114 & 1) != 0)) ||
+    ((nObjIndex == 9 && (((*(int **)(pThis->unk_Pointer))[6] & 2U) != 0))))
+    {
+        pThis->unk_0x114 &= 0xfffdffff;
+    }
+
+    if ((**(uint32_t**)(pThis->unk_0x18) == 0xb) && (nObjIndex = 0, puVar6 = *(0x80164774), 0 < *(0x8016478c)))
+    {
+        do {
+            if (puVar6 == pThis) return;
+            nObjIndex += 1;
+            puVar6 = puVar6 + 0x15f8;
+        } while (iVar4 < *(0x8016478c));
+    }
+
+    FUN_802be224();
+
+    (pThis->unk_0x1e8) = 0;
+
+    if (param_6 == -1) {
+        LAB_80033a3c:
+        piVar7 = *(int **)(pThis->unk_0x18);
+    }
+    else {
+        FUN_802c3780();
+        piVar7 = *(int **)(pThis->unk_0x18);
+        nObjIndex = *piVar7;
+        if (nObjIndex != 1) goto LAB_80033a48;
+        if ((piVar7[1] & 0x400000U) != 0) {
+            pThis->unk_0x214 = 2;
+            goto LAB_80033a3c;
+        }
+    }
+    nObjIndex = *piVar7;
+    
+    LAB_80033a48:
+    if ((nObjIndex == 0xd) && ((piVar7[6] & 4U) != 0)) *(uint32_t*)(pThis->unk_0x180) |= 0x800000;
+
+    FUN_80233f24();
+    nObjIndex = FUN_8023e9b0();
+    *(int*)(pThis->unk_end) = nObjIndex << 10;
+    if ((*(uint32_t*)(pThis->unk_0x114) & 8) != 0) {
+        *(uint32_t*)(pThis->unk_0x2c4) = 0x23807c;
+        uVar3 = *(0x80103334);
+        uVar2 = *(0x80103330);
+        uVar1 = *(0x8010332c);
+        *(uint32_t*)(pThis->unk_0x150) = *(0x80103328);
+        *(uint32_t*)(pThis->unk_0x154) = uVar1;
+        *(uint32_t*)(pThis->unk_0x158) = uVar2;
+        *(uint32_t*)(pThis->unk_0x15c) = uVar3;
+        uVar1 = *(0x8010333c);
+        *(uint8_t**)(pThis->unk_0x160) = PTR_*(0x80103338);
+        *(uint32_t*)(pThis->unk_0x164) = uVar1;
+        uVar3 = *(0x80103334);
+        uVar2 = *(0x80103330);
+        uVar1 = *(0x8010332c);
+        *(uint32_t*)(pThis->unk_0x168) = *(0x80103328);
+        *(uint32_t*)(pThis->unk_0x16c) = uVar1;
+        *(uint32_t*)(pThis->unk_0x170) = uVar2;
+        *(uint32_t*)(pThis->unk_0x174) = uVar3;
+        uVar1 = *(0x8010333c);
+        *(uint8_t**)(pThis->unk_0x178) = **(0x80103338);
+        *(uint32_t*)(pThis->unk_0x17c) = uVar1;
+    }
+    iVar4 = 4;
+    pThis = pThis + 0x10;
+    do {
+        *(uint32_t*)(pThis->unk_0x2a0) = 0;
+        iVar4 = iVar4 + -1;
+        pThis = pThis + -4;
+    } while (-1 < iVar4);
+    return;
+}
+```
 
