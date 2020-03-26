@@ -29,6 +29,10 @@
 |0x80114A10| int[2][5][7]         | VideoVals                       | Video settings for resolutions NTSC/PAL               |
 |0x80114AB8| RenderParams[3]      | RenderVals                      | RenderParams for each resolution option               |
 |0x8013D8B0| float                | refresh_rate                    | Game speed and physics scale to this                  |
+|0x8013DC70| s32                  | m_LevelStatus                   | Level load status?                                    |
+|0x8013DC74| s32                  | m_bPersistentDataLoaded         | Set to 1 when persistent scene data is loaded         |
+|0x8013DC78| u32                  | m_LevelIntroPlayedFlags         | Various functions related to cutscenes?               |
+|0x8013DDA8| CGameObjectInstance* | unk_ActorList                   | Pointer to list of [CGameObjectInstance](#gameobject)s|
 |0x8013DDB4| CPlayer*             | m_pPlayer                       | Pointer to current [CPlayer](#player) structure       |
 |0x801659B0| u8                   | m_bStereo                       | Toggles stereo audio                                  |
 |0x801659B1| u8                   | m_MusicVolume                   | Volume level of music                                 |
@@ -36,12 +40,60 @@
 |0x801659B2| u8                   | m_SpeechVolume                  | Volume level of speech                                |
 |0x801659BB| u8                   | unk_DeathmatchRadar             | Deathmatch Radar mode See: TODO                       |
 |0x801659BC| u8                   | unk_video_mode                  | Copy of video mode                                    |
-|0x801659C0| u32                  | unk_m_Mode                      | Current game mode; probably a copy                    |
+|0x801659C0| u32                  | unk_GameMode                    | Current game mode; probably a copy                    |
 |0x801659C4| u32                  | unk_unlockedSecrets             | Currently unlcoked cheats. Bitfield                   |
 |0x801659C8| u32                  | unk_Secrets                     | Currently toggled cheats. Bitfield                    |
 |0x801659CC| int                  | m_Difficulty                    | Game difficulty See [unk_Difficulty](#difficulty)     |
+|0x801659D8| u32                  | unk_GameMode2                   | Copy of unk_GameMode                                  |
+|0x801659DC| u32                  | unk_ScoreLimit                  | Score limit for multiplayer                           |
+|0x801659E0| u32                  | unk_TimeLimit                   | Time limit for multiplayer                            |
+|0x801659E8| u32                  | unk_TeamDamage                  | Is there team damage? Possibly is the scale           |
+|0x801659EC| u32                  | unk_SuddenDeath                 | Sudden death option for multiplayer                   |
+|0x801659F0| u32                  | unk_Arena                       | Selected arena index for multiplayer                  |
+|0x80165A00| u32                  | unk_WeaponsPreset               | Selected weapon preset index for multiplayer          |
+|0x80165A0C| u32                  | unk_MPBowSetting                | Bow Off/On/Start with option for multiplayer          |
+|0x80165A10| u32                  | unk_MPPistolSetting             | Pistol Off/On/Start with option for multiplayer       |
+|0x80165A14| u32                  | unk_MPARSetting                 | AR Off/On/Start with option for multiplayer           |
+|0x80165A18| u32                  | unk_MPShotgunSetting            | Shotgun Off/On/Start with option for multiplayer      |
+|0x80165A1C| u32                  | unk_MPVampSetting               | Vampire Gun Off/On/Start with option for multiplayer  |
+|0x80165A20| u32                  | unk_MPGrenadeSetting            | Grenade Launcher Off/On/Start with option for multiplayer |
+|0x80165A24| u32                  | unk_MPBoreSetting               | Cerebral Bore Off/On/Start with option for multiplayer    |
+|0x80165A54| s32                  | unk_DamageScale                 | Damage scale for multiplayer, not linear              |
+|0x80165A58| u32                  | unk_MPMaxHealth                 | Max health for multiplayer                            |
+|0x80165A5C| float                | unk_PickupDelay                 | Pickup respawn delay scale for multiplayer            |
+|0x80165A60| float                | unk_HealthPickupValue           | Health pickup amount scale for multiplayer            |
+|0x80165A64| float                | unk_InitialAmmo                 | Initial ammo amount scale for multiplayer             |
+|0x80165A68| float                | unk_AmmoCapacity                | Ammo capacity scale for multiplayer                   |
+|0x80165A6C| float                | unk_AmmoPickupValue             | Ammo pickup amount scale for multiplayer              |
+|0x80165A70| float                | unk_SpecialPickupValue          | Special pickup related scale for multiplayer          |
+|0x80165A74| float                | unk_Gravity                     | Gravity scale for multiplayer                         |
+|0x80165A78| float                | unk_MovementSpeed               | Movement speed scale for multiplayer                  |
 |0x80165B10| u32                  | unk_DeathmatchMusic             | Deathmatch music?                                     |
 |0x80165B60| CString              | unk_CharacterName               | Character name? Player1                               |
+|0x80165C64| u8                   | unk_p1Active                    | Is player 1 active in multiplayer? (possibly index)   |
+|0x80165C65| u8                   | unk_p1Active2                   | Is player 1 active in multiplayer?                    |
+|0x80165C66| u8                   | unk_p1IsBot                     | Is player 1 a bot?                                    |
+|0x80165C68| u8                   | unk_p1Character                 | Selected character index of player 1                  |
+|0x80165C69| s8                   | unk_p1Hanicap                   | Handicap amount for player 1                          |
+|0x80165C78| u32                  | unk_p1Team                      | Selected team of player 1                             |
+|0x80165D6C| u8                   | unk_p2Active                    | Is player 2 active in multiplayer? (possibly index)   |
+|0x80165D6D| u8                   | unk_p2Active2                   | Is player 2 active in multiplayer?                    |
+|0x80165D6E| u8                   | unk_p2IsBot                     | Is player 2 a bot?                                    |
+|0x80165D70| u8                   | unk_p2Character                 | Selected character index of player 2                  |
+|0x80165D71| s8                   | unk_p2Hanicap                   | Handicap amount for player 2                          |
+|0x80165D80| u32                  | unk_p2Team                      | Selected team of player 2                             |
+|0x80165E74| u8                   | unk_p3Active                    | Is player 3 active in multiplayer? (possibly index)   |
+|0x80165E75| u8                   | unk_p3Active2                   | Is player 3 active in multiplayer?                    |
+|0x80165E76| u8                   | unk_p3IsBot                     | Is player 3 a bot?                                    |
+|0x80165E78| u8                   | unk_p3Character                 | Selected character index of player 3                  |
+|0x80165E79| s8                   | unk_p3Hanicap                   | Handicap amount for player 3                          |
+|0x80165E88| u32                  | unk_p3Team                      | Selected team of player 3                             |
+|0x80165F7C| u8                   | unk_p4Active                    | Is player 4 active in multiplayer? (possibly index)   |
+|0x80165F7D| u8                   | unk_p4Active2                   | Is player 4 active in multiplayer?                    |
+|0x80165F7E| u8                   | unk_p4IsBot                     | Is player 4 a bot?                                    |
+|0x80165F80| u8                   | unk_p4Character                 | Selected character index of player 4                  |
+|0x80165F81| s8                   | unk_p4Hanicap                   | Handicap amount for player 4                          |
+|0x80165F90| u32                  | unk_p4Team                      | Selected team of player 4                             |
 |0x80166080| u8                   | unk_HorzSpeed                   | Horizontal look-speed Player1                         |
 |0x80166081| u8                   | unk_VertSpeed                   | Vertical look-speed Player1                           |
 |0x80166082| u16                  | unk_ControlStyle                | Current control style Player1                         |
@@ -231,6 +283,12 @@ typedef struct CPlayer_t
     int m_nController; // 0x6D4; Controller to set on load
     struct CPlayerOptions_t* m_pOptions; // 0x6D8; Pointer to player options
     struct CCamera_t* m_pCamera; // 0x6DC; Pointer to current camera
+
+    int m_Health; //0x6E7??; Current health. Why is it not aligned?!
+    u8 unk_m_SubHealth; //0x6EB??; Health between ticks. Why is it not aligned?!
+    s16 m_LifeForce; //0x6EC; Number of life force tokens
+    s16 m_MaxHealth; //0x6F0; a smaller data type than m_Health?
+    CVector3 unk_SpawnPointCopy; //0x6F4; copy of the point you spawn at?
 
     s16 m_Mode; // 0xCD2; Current mode
     s16 m_ModeBefore; // 0xCD6; Copy of mode before current mode
