@@ -5,11 +5,12 @@
 
 #include <inttypes.h>
 #include <CGameObjectInstance.h>
+#include <CIntelligence.h>
 
 void CGameObjectInstance__Construct(
     CGameObjectInstance* pThis, int nObjIndex,
-    uint32_t param_3, uint32_t param_4, uint32_t param_5, int param_6,
-    uint32_t param_7, float RotY, CVector3 vPos, uint32_t param_12,
+    uint32_t draw_flags, uint32_t param_4, CIntelligence* intelligence, int param_6,
+    void* unk_pointer, float RotY, CVector3 vPos, uint32_t flags,
     CVector3 vScale, CVector3 vVelocity
 )
 {
@@ -24,43 +25,43 @@ void CGameObjectInstance__Construct(
     float local_28;
     float local_24;
     float local_20;
-    uint32_t local_1c;
+    float scale;
 
-    pThis->unk_0x144 &= 0xfffbffff;
+    pThis->m_Flags &= 0xfffbffff;
 
     //FUN_8027de0c possibly returns the current number of CGameObjectInstances? TODO: Investigate address 0x8013dc70 and FUN_8027de0c (0x8013dc70 seems to be the global scene address)
-    //FUN_8027de0c is some sort of binary search, though I cannot disassemble it
+    //FUN_8027de0c is some sort of binary search, though I cannot disassemble it 012E0C02
     if (nObjIndex == -1) nObjIndex = FUN_8027de0c(0x8013dc70);
     if (nObjIndex == -1) return;
 
     //Possibly some sort of constructor? TODO: Investigate
-    FUN_802331a0(pThis, nObjIndex, (uint8_t)param_3, (uint8_t)param_4, (char)local_28, (char)local_24, (char)local_20, (char)local_1c, unaff_s0, unaff_s1, in_stack_000003a3);
+    FUN_802331a0(pThis, nObjIndex, draw_flags, (uint8_t)param_4, (char)local_28, (char)local_24, (char)local_20, scale, unaff_s0, unaff_s1, in_stack_000003a3);
 
     pThis->m_Type = 1;
     pThis->m_nObjType = nObjIndex;
-    pThis->unk_Pointer = param_5;
-    pThis->unk_0x14 = param_7;
+    pThis->m_pIntelligence = intelligence;
+    pThis->unk_0x14 = unk_pointer;
     pThis->m_RotY = RotY;
     pThis->m_vPos = vPos;
-    pThis->unk_0x114 = param_12;
+    pThis->m_Flags = flags;
     pThis->m_vScale = vScale;
     pThis->m_vVelocity = vVelocity;
-    pThis->unk_0xf8 = (short)param_3;
+    pThis->m_DrawFlags = (short)draw_flags;
 
     FUN_8023b2f8(&stack0xffffffd8, pThis);
 
     CVector3__Construct(&pThis->m_Rot, local_20, local_24, local_28);
-    pThis->unk_0x68 = local_1c; //The context of this implies that m_Rot is a Quaternion?
+    pThis->m_Scale = scale;
     pThis->unk_0x70 = 0;
     pThis->unk_0xfa = (short)0;
     pThis->unk_0x14c = (short)0;
-    pThis->unk_end = 0xc7800074;
+    pThis->unk_0x364 = 0xc7800074;
 
     FUN_8024fe1c();
     FUN_8024fe1c();
     FUN_80238c80(pThis, 0); //I think this sets the animation index? TODO: Investigate
 
-    pThis->unk_0x114 &= 0xfffffbff | 0x2100;
+    pThis->m_Flags &= 0xfffffbff | 0x2100;
 
     FUN_80262768();
 
@@ -69,17 +70,17 @@ void CGameObjectInstance__Construct(
     pThis->unk_0xbc = (uint8_t)0;
     pThis->unk_0x14f = 0;
 
-    pThis->unk_0x114 |= 0x30000;
+    pThis->m_Flags |= 0x30000;
 
-    nObjIndex = **(int **)(pThis->unk_Pointer);
+    nObjIndex = **(int **)(pThis->m_pIntelligence);
 
-    if (((nObjIndex == 0) || ((pThis->unk_0x114 & 1) != 0)) ||
-    ((nObjIndex == 9 && (((*(int **)(pThis->unk_Pointer))[6] & 2U) != 0))))
+    if (((nObjIndex == 0) || ((pThis->m_Flags & 1) != 0)) ||
+    ((nObjIndex == 9 && (((*(int **)(pThis->m_pIntelligence))[6] & 2U) != 0))))
     {
-        pThis->unk_0x114 &= 0xfffdffff;
+        pThis->m_Flags &= 0xfffdffff;
     }
 
-    if ((**(uint32_t**)(pThis->unk_0x18) == 0xb) && (nObjIndex = 0, puVar6 = *(0x80164774), 0 < *(0x8016478c)))
+    if ((**(uint32_t**)(pThis->m_pIntelligence) == 0xb) && (nObjIndex = 0, puVar6 = *(0x80164774), 0 < *(0x8016478c)))
     {
         do {
             if (puVar6 == pThis) return;
@@ -90,15 +91,15 @@ void CGameObjectInstance__Construct(
 
     FUN_802be224();
 
-    (pThis->unk_0x1e8) = 0;
+    (pThis->m_pParent) = 0;
 
     if (param_6 == -1) {
         LAB_80033a3c:
-        piVar7 = *(int **)(pThis->unk_0x18);
+        piVar7 = *(int **)(pThis->m_pIntelligence);
     }
     else {
         FUN_802c3780();
-        piVar7 = *(int **)(pThis->unk_0x18);
+        piVar7 = *(int **)(pThis->m_pIntelligence);
         nObjIndex = *piVar7;
         if (nObjIndex != 1) goto LAB_80033a48;
         if ((piVar7[1] & 0x400000U) != 0) {
@@ -109,12 +110,12 @@ void CGameObjectInstance__Construct(
     nObjIndex = *piVar7;
 
     LAB_80033a48:
-    if ((nObjIndex == 0xd) && ((piVar7[6] & 4U) != 0)) *(uint32_t*)(pThis->unk_0x180) |= 0x800000;
+    if ((nObjIndex == 0xd) && ((piVar7[6] & 4U) != 0)) *(uint32_t*)(pThis->unk_0x140) |= 0x800000;
 
     FUN_80233f24();
     nObjIndex = FUN_8023e9b0();
-    *(int*)(pThis->unk_end) = nObjIndex << 10;
-    if ((*(uint32_t*)(pThis->unk_0x114) & 8) != 0) {
+    *(int*)(pThis->unk_0x364) = nObjIndex << 10;
+    if ((*(uint32_t*)(pThis->m_Flags) & 8) != 0) {
         *(uint32_t*)(pThis->unk_0x2c4) = 0x23807c;
         uVar3 = *(0x80103334);
         uVar2 = *(0x80103330);

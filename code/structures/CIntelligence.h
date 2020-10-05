@@ -24,7 +24,7 @@ typedef struct {
     /* 0x30 */ float m_CollisionHeight;
     /* 0x34 */ float m_unk_Death;
     /* 0x38 */ float m_CollisionOffsetY;
-    /* 0x3C */  float unk_0x3C;
+    /* 0x3C */ float unk_0x3C;
     /* 0x40 */ float unk_0x40;
     /* 0x44 */ void* unk_0x44;
     /* 0x48 */ float unk_0x48;
@@ -34,7 +34,7 @@ typedef struct {
     /* 0x5C */ float m_MeleeRadius; // Very Unsure
     /* 0x60 */ float unk_0x60;
     /* 0x64 */ float unk_0x64;
-    /* 0x68 */ float m_AgressionRadius;
+    /* 0x68 */ float m_AggressionRadius;
     /* 0x6C */ float unk_0x6C;
     /* 0x70 */ float unk_0x70;
     /* 0x74 */ uint64_t m_Flags_1;
@@ -42,6 +42,17 @@ typedef struct {
     /* 0x80 */ uint64_t unk_0x80;
     /* 0x88 */ uint32_t unk_0x88[10];
 } CIntelligenceEnemy; /* sizeof = B0 */
+
+typedef struct
+{
+    union
+    {
+        CIntelligenceBase base;
+        CIntelligencePlayer player;
+        CIntelligenceEnemy enemy;
+    };
+} CIntelligence;
+
 
 #endif
 

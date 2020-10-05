@@ -73,7 +73,8 @@
 80165A78|float|mpMovementSpeedScale|
 80165B10|uint32_t|mpDeathmatchMusic|
 80165B58|[COptions](#opts)|gameOptions|
-
+80164778|[CPlayerPool](#ppool)|playerPool|
+801647C0|[CCameraPool](#cpool)|cameraPool|
 
 
 ## Types, Enums, and Structs/Classes
@@ -93,6 +94,12 @@
 |----|-----------|
 |[CCamera.h](code/structures/CCamera.h)|CCamera|
 
+### CCameraPool <a name="cpool"></a>
+|File|Definitions|
+|----|-----------|
+|[CCameraPool.h](code/structures/CCameraPool.h)|CCameraPool|
+
+
 ### CGameObjectInstance <a name="gameobject"></a>
 |File|Definitions|
 |----|-----------|
@@ -103,7 +110,7 @@
 ### CIntelligence <a name="intelligence"></a>
 |File|Definitions|
 |----|-----------|
-|[CIntelligence.h](code/structures/CIntelligence.h)|CIntelligenceBase, CIntelligencePlayer, CIntelligenceEnemy|
+|[CIntelligence.h](code/structures/CIntelligence.h)|CIntelligenceBase, CIntelligencePlayer, CIntelligenceEnemy, CIntelligence|
 
 ### COptions <a name="opts"></a>
 |File|Definitions|
@@ -115,6 +122,11 @@
 |File|Definitions|
 |----|-----------|
 |[CPlayer.h](code/structures/CPlayer.h)|WeaponId, CrossHairMode, CrossHairSightIcon, CPlayer|
+
+### CPlayerPool <a name="ppool"></a>
+|File|Definitions|
+|----|-----------|
+|[CPlayerPool.h](code/structures/CCPlayerPool.h)|CPlayerPool|
 
 ### CPlayerOptions <a name="playeropts"></a>
 |File|Definitions|

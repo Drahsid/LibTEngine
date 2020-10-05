@@ -16,7 +16,7 @@ typedef struct
     /* 0x006 */ uint16_t unk_0x06;
     /* 0x008 */ CVector3 m_vPos;
     /* 0x014 */ void* unk_0x14;
-    /* 0x018 */ CIntelligenceBase* m_pIntelligence;
+    /* 0x018 */ CIntelligence* m_pIntelligence;
     /* 0x01C */ CVector3 m_vVelocity;
     /* 0x028 */ int unk_0x28[4];
     /* 0x038 */ uint32_t m_MoveFlags;
@@ -25,7 +25,9 @@ typedef struct
     /* 0x05C */ CVector3 m_Rot;
     /* 0x068 */ float m_Scale;
     /* 0x06C */ float m_RotY;
-    /* 0x070 */ int unk_0x70[41];
+    /* 0x070 */ int unk_0x70[34];
+    /* 0x0F8 */ uint32_t m_DrawFlags;
+    /* 0x0FC */ int unk_0xFC[6];
     /* 0x114 */ uint32_t m_Flags;
     /* 0x118 */ CAnimationState m_CurrentAnimation;
     /* 0x12C */ CAnimationState m_BlendAnimation;

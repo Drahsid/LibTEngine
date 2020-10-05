@@ -35,9 +35,9 @@ typedef struct {
 } CMPPlayerOptions; // sizeof = 0x104
 
 typedef struct {
-    /* 0x01 */ uint8_t m_nHorzSpeed;
-    /* 0x02 */ uint8_t m_nVertSpeed;
-    /* 0x03 */ uint16_t m_ControlStyle;
+    /* 0x00 */ uint8_t m_nHorzSpeed;
+    /* 0x01 */ uint8_t m_nVertSpeed;
+    /* 0x02 */ uint16_t m_ControlStyle;
     /* 0x04 */ uint8_t m_bReverseVert;
     /* 0x05 */ uint8_t m_bLookSpring;
     /* 0x06 */ uint8_t m_bAutoAim;

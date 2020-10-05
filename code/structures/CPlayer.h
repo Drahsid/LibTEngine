@@ -145,7 +145,7 @@ typedef struct
     /* 0xF58 */ float m_TargetZoomBlend; // Target zoom blend
 
     // There is probably more, needs more investigation
-} CPlayer; /* sizeof =  TODO */
+} CPlayer; /* sizeof =  0x15F0? */
 
 #endif
 
