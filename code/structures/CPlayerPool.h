@@ -6,24 +6,24 @@
 
 typedef struct
 {
-    uint32_t unk_0x00;
-    CPlayer* m_pPlayers[4];
-    int m_nPlayers;
+    /* 0x00 */ uint32_t unk_0x00;
+    /* 0x04 */ CPlayer* m_pPlayers[4];
+    /* 0x14 */ int m_nPlayers;
 
     // TODO: structure
-    void* m_pFreeHead;
-    void* m_pFreeTail;
-    uint32_t m_nFreeTailOffset;
-    uint32_t m_nFreeHeadOffset;
-    uint32_t m_nNumFree;
+    /* 0x18 */ void* m_pFreeHead;
+    /* 0x1C */ void* m_pFreeTail;
+    /* 0x20 */ uint32_t m_nFreeTailOffset;
+    /* 0x24 */ uint32_t m_nFreeHeadOffset;
+    /* 0x28 */ uint32_t m_nNumFree;
 
-    void* m_pActiveHead;
-    void* m_pActiveTail;
-    uint32_t m_nActiveTailOffset;
-    uint32_t m_nActiveHeadOffset;
-    uint32_t m_nNumActive;
+    /* 0x2C */ void* m_pActiveHead;
+    /* 0x30 */ void* m_pActiveTail;
+    /* 0x34 */ uint32_t m_nActiveTailOffset;
+    /* 0x38 */ uint32_t m_nActiveHeadOffset;
+    /* 0x3C */ uint32_t m_nNumActive;
 
-    uint64_t unk_0x40;
+    /* 0x40 */ uint64_t unk_0x40;
 } CPlayerPool; /* sizeof = 0x48 */
 
 #endif
