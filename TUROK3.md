@@ -84,6 +84,11 @@
 800E4E30|code|osViSwapBuffer|
 800E5380|code|osCreateViManager|
 80114974|uint32_t|bCutsceneBlackBars|
+800FB0C0|float|refresh_rate_set_PAL|
+800FB0C4|float|refresh_rate_set_NTSC|
+800FB120|float|frame_fps|
+800FB11C|float|frame_cpu_scale|
+80104E78|float|frame_increment|
 801149E0|int|nScreenWidth|
 801149E4|int|nScreenHeight|
 801149E8|float|stretchX|
@@ -97,11 +102,22 @@
 80114A08|int[2]|nModes|
 80114A10|[CVideoVals[6]](#videovals)|[VideoVals](#videovals)|
 80114AB8|[RenderParams[3]](#renderparams)|[RenderVals](#renderparams)
+801280A0|[CHeap](#heap)|g_heap|
 80131EEA|uint16_t|nController|
 80131F94|int8_t|nJoyX|
 80131F95|int8_t|nJoyY|
+80139330|void*|pNextFB|
+80139340|osMesg*|pMsg|
+80139350|uint32_t|next_l_fields|
+80139360|uint32_t|next_ll_fields|
+80139370|uint32_t|next_lll_fields|
+80139380|uint32_t|next_pending|
+801393A0|void*|pCurrentFB|
+801393B0|uint32_t|current_waiting|
+801393C0|uint32_t|next_waiting|
 8013D8B0|float|refreshRate|
-8013DC70|int|levelStatus|
+8013D8C0|[CEngineApp](#todo)|g_app
+8013DC70|int|levelStatus| Members part of CScene starting here; TODO: cartograph this structure
 8013DC74|int|bPersistentDataLoaded|
 8013DC78|int|levelCutsceneFlags|
 8013DD9C|uint32_t|savePersistentDataSize|
@@ -109,7 +125,9 @@
 8013DDA8|[CGameObjectInstance*](#gameobject)|pActorList|
 8013DDB0|uint32_t|nNumActors|
 8013DDB4|[CPlayer*](#player)|pPlayer|
-801659B0|uint8_t|bStereo|
+80164778|[CPlayerPool](#ppool)|playerPool|
+801647C0|[CCameraPool](#cpool)|cameraPool|
+801659B0|uint8_t|bStereo| Members part of an options struct starting here; TODO: cartograph this structure
 801659B1|uint8_t|nMusicVolume|
 801659B2|uint8_t|nSfxVolume|
 801659B3|uint8_t|nSpeechVolume|
@@ -145,8 +163,10 @@
 80165A78|float|mpMovementSpeedScale|
 80165B10|uint32_t|mpDeathmatchMusic|
 80165B58|[COptions](#opts)|gameOptions|
-80164778|[CPlayerPool](#ppool)|playerPool|
-801647C0|[CCameraPool](#cpool)|cameraPool|
+80166120|uint32_t|next_fields| this is graphics stuff, related to stuff around 8013; probably part of a structure
+80166130|uint32_t|nDisplayLists|
+80166180|uint32_t|current_finished|
+801661E0|uint32_t|current_fields|
 
 
 ## Types, Enums, and Structs/Classes
@@ -178,6 +198,12 @@
 |[CGameObjectInstance.h](code/structures/CGameObjectInstance.h)|CGameObjectInstance|
 |[CGameObjectInstance__Construct.c](code/nonmatching/CGameObjectInstance__Construct.c)|void(CGameObjectInstance__Construct)|
 |[ObjectInstanceId.h](code/unorganized/ObjectInstanceId.h)|ObjectInstanceId|
+
+### CHeap <a name="heap"></a>
+|File|Definitions|
+|----|-----------|
+|[CHeap.h](code/structures/CHeap.h)|CHeap, CHeapBlock|
+
 
 ### CIntelligence <a name="intelligence"></a>
 |File|Definitions|
