@@ -55,19 +55,19 @@ typedef struct
     /* 0x118 */ CAnimationState m_CurrentAnimation;
     /* 0x12C */ CAnimationState m_BlendAnimation;
     /* 0x140 */ int unk_0x140[4];
-    /* 0x050 */ Lights1 m_Lights[2];
+    /* 0x150 */ Lights1 m_Lights[2];
     /* 0x180 */ int unk_0x180[12];
     /* 0x1B0 */ CAnimationData* m_pCurrentAnimation;
     /* 0x1B4 */ int unk_0x1B4[5];
     /* 0x1C8 */ CVector3 m_vPosLastFrame;
     /* 0x1D4 */ CVector3 m_vDesiredPos;
     /* 0x1E0 */ float m_RotYLastFrame;
-    /* 0x1E4 */ int unk_0x000;
+    /* 0x1E4 */ int unk_0x1E4;
     /* 0x1E8 */ CGameObjectInstance* m_pParent;
     /* 0x1EC */ int unk_0x1EC[21];
     /* 0x240 */ float m_AnimSpeed;
     /* 0x244 */ float m_ModeAnimSpeed;
-    /* 0x248 */ int unk_0x248[30]
+    /* 0x248 */ int unk_0x248[30];
     /* 0x2C0 */ updateFunc m_pfStep;
     /* 0x2C4 */ updateFunc m_pfDraw;
     /* 0x2C8 */ updateFunc m_pfHurt;
