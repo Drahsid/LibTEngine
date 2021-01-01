@@ -10,7 +10,7 @@
 #### Function Map
 
 |Name                                      |Location|Function Signature                                                                                                                                                                                                                                                             |Function Size|
-|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
 |romMain                                   |80000400|void romMain(void)                                                                                                                                                                                                                                                        |136          |
 |main                                      |0020aa50|int main(void)                                                                                                                                                                                                                                                        |112          |
 |COnScreen__SetFontIndex                   |0020c0f0|void COnScreen__SetFontIndex(int index)                                                                                                                                                                                                                               |717          |
@@ -224,13 +224,9 @@
 |CPlayer__HaltAllLoopingSounds             |0044ddd4|void CPlayer__HaltAllLoopingSounds(CGameObjectInstance* pThis)                                                                                                                                                                                                       |72           |
 |CDecompressor__Construct                  |00242360|void CDecompressor__Construct(void)                                                                                                                                                                                                                              |1            |
 |osViSwapBuffer                            |002e4e30|void osViSwapBuffer(void)                                                                                                                                                                                                                                        |8            |
-
-[comment]: # (|CPool__AllocateStandardBuffers            |80405c70|void CPool__AllocateStandardBuffers()                                                                                                                                                                                                                            |12           |)
-
-[comment]: # (|CPool__Construct                          |80406044|void CPool__Construct(void* pThis)                                                                                                                                                                                                                              |1            |)
-
-[comment]: # (|CPlayerPool__Construct                    |8044da48|void CPlayerPool__Construct(uint8_t* pThis)                                                                                                                                                                                                                          |108          |)
-
+|CPool__AllocateStandardBuffers            |~~80405c70~~|void CPool__AllocateStandardBuffers()                                                                                                                                                                                                                            |12           |
+|CPool__Construct                          |~~80406044~~|void CPool__Construct(void* pThis)                                                                                                                                                                                                                              |1            |
+|CPlayerPool__Construct                    |~~8044da48~~|void CPlayerPool__Construct(uint8_t* pThis)                                                                                                                                                                                                                          |108          |
 
 ### Memory Map
 
