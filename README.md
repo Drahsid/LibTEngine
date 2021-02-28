@@ -11,7 +11,7 @@ If you are just here for the mneonics:
 - Documentation on the mneonics of Turok 3 can be found [here](TUROK3.md)
 
 # How was this done, what tools did you use?
-To do this, though used various tools, these have been the most helpful:
+To do this, I have used various tools:
 - [Project64](https://github.com/project64/project64) for the great in-dev debugger
 - [ModLoader64](https://github.com/hylian-modding/ModLoader64) for some debugging utilities I wrote
 - [Ida](https://www.hex-rays.com/products/ida/) for the disassembler and opcode utilities
