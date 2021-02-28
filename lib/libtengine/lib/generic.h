@@ -19,6 +19,25 @@ asm("boot = 0x00285BBC");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern void idle(void);
@@ -35,6 +54,25 @@ asm("idle = 0x00285f10");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -53,6 +91,25 @@ asm("mainproc = 0x00285f38");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern void romMain(void);
@@ -69,6 +126,25 @@ asm("romMain = 0x80000400");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -87,6 +163,25 @@ asm("main = 0x0020aa50");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern void EnableAllRumblePaks(int bEnable);
@@ -103,6 +198,25 @@ asm("EnableAllRumblePaks = 0x0025245C");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -121,6 +235,25 @@ asm("InitAllRumblePaks = 0x00252414");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern void InitializeSystemResources(void);
@@ -137,6 +270,25 @@ asm("InitializeSystemResources = 0x002439F0");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -155,6 +307,25 @@ asm("Pak_InitSystem = 0x00405150");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern int ProPackDecompress(void* pCacheEntry, int IntermediateStep);
@@ -171,6 +342,25 @@ asm("ProPackDecompress = 0x00176270");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -189,6 +379,25 @@ asm("VM_Initialize = 0x0028653C");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 

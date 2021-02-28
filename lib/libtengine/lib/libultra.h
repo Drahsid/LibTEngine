@@ -3,7 +3,7 @@
 
 #include "../../libultra/ultra64.h"
 #include "../../libultra/PR/sched.h"
-#include "../../inttypes.h"
+#include <inttypes.h>
 
 // OS functions are already defined in ultra64.h's includes
 
@@ -22,6 +22,25 @@ asm("osInitialize = 0x002de360");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void __osDisableInt(void);
@@ -38,6 +57,25 @@ asm("__osDisableInt = 0x002def00");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -56,6 +94,25 @@ asm("__osRestoreInt = 0x002def20");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osSetThreadPri(OSThread *t, OSPri pri);
@@ -72,6 +129,25 @@ asm("osSetThreadPri = 0x002df080");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -90,6 +166,25 @@ asm("osWritebackDCache = 0x002df1e0");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osViSetYScale(f32 yscale);
@@ -107,6 +202,25 @@ asm("osViSetYScale = 0x002e4d10");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osViSwapBuffer(void *vaddr);
@@ -123,6 +237,25 @@ asm("osViSwapBuffer = 0x002e4e30");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -142,6 +275,25 @@ asm("osViSetSpecialFeatures = 0x002e5140");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern u32 __osGetFpcCsr(void);
@@ -158,6 +310,25 @@ asm("__osGetFpcCsr = 0x002e5360");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -176,6 +347,25 @@ asm("__osSetFpcCsr = 0x002e5370");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void guLookAtF(float mf[4][4], float xEye, float yEye, float zEye, float xAt,  float yAt,  float zAt, float xUp,  float yUp,  float zUp)
@@ -192,6 +382,25 @@ asm("guLookAtF = 0x002e5900");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -210,6 +419,25 @@ asm("osSpTaskYield = 0x002e4d60");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osCreateMesgQueue(OSMesgQueue* mq, OSMesg* msg, int count);
@@ -226,6 +454,25 @@ asm("osCreateMesgQueue = 0x002DDD20");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -244,6 +491,25 @@ asm("osCreateScheduler = 0x0028280C");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osCreateThread(OSThread* t, OSId id, void (*entry)(void*), void* arg, void* sp, OSPri pri);
@@ -260,6 +526,25 @@ asm("osCreateThread = 0x002DDB30");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -278,6 +563,25 @@ asm("osCreateViManager = 0x002E5380");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern uint32_t osGetMemSize(void);
@@ -294,6 +598,25 @@ asm("osGetMemSize = 0x00252C80");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -312,6 +635,25 @@ asm("osInvalDCache = 0x002DEE10");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osJamMesg(OSMesgQueue* mq, OSMesg msg, int flag);
@@ -328,6 +670,25 @@ asm("osJamMesg = 0x002DEF40");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -346,6 +707,25 @@ asm("osPiRawStartDma = 0x002Df250");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osRecvMesg(OSMesgQueue* mq, OSMesg* msg, int flag);
@@ -362,6 +742,25 @@ asm("osRecvMesg = 0x002DDE80");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -380,6 +779,25 @@ asm("osScAddClient = 0x0028291C");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osSetEventMesg(OSEvent e, OSMesgQueue *mq, OSMesg m);
@@ -396,6 +814,25 @@ asm("osSetEventMesg = 0x00232574");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -414,6 +851,25 @@ asm("osSendMesg = 0x002DDD50");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern int osSetTimer(OSTimer* timer, OSTime countdown, OSTime interval, OSMesgQueue* mq, OSMesg msg);
@@ -430,6 +886,25 @@ asm("osSetTimer = 0x002DF150");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -448,6 +923,25 @@ asm("osStartThread = 0x002DDA10");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 //extern void osViBlack(uint8_t active);
@@ -464,6 +958,25 @@ asm("osViBlack = 0x002E4DD0");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 

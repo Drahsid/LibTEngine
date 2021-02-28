@@ -1,8 +1,9 @@
 #ifndef CLOADERENTRY_TYPE_H
 #define CLOADERENTRY_TYPE_H
 
-#include "../../../inttypes.h"
+#include <inttypes.h>
 
+// No version differences afaik
 typedef struct CLoaderEntry_t {
     /* 0x00 */ void* m_pAddress;
     /* 0x04 */ void* m_pDest;

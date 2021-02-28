@@ -1,8 +1,7 @@
-#ifndef CQUAT_H
-#define CQUAT_H
+#ifndef CQUATERNION_H
+#define CQUATERNION_H
 
-typedef struct
-{
+typedef struct {
     /* 0x00 */ float x;
     /* 0x04 */ float y;
     /* 0x08 */ float z;

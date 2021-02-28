@@ -1,8 +1,7 @@
 #ifndef VIDEOVALS_H
 #define VIDEOVALS_H
 
-typedef struct
-{
+typedef struct {
     /* 0x00 */ int m_nResX;
     /* 0x04 */ int m_nResY;
     /* 0x08 */ int m_nXOffset;
@@ -39,7 +38,7 @@ const VideoVals VideoVals_Letterbox = (VideoVals) {
     0
 };*/
 
-const CVideoVals VideoVals[6];
+//extern CVideoVals VideoVals[6];
 
 #endif
 

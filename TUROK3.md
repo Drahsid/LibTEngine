@@ -2,12 +2,12 @@
 
 ## Map
 
-###### **Notes**
+##### **Notes**
 
 ###### The US release of the game was compiled with O3
 ###### The virtual address of most functions are: address - 0x200000 + 0x80000000
 
-#### Function Map
+### Function Map
 
 |Name                                      |Location|Function Signature                                                                                                                                                                                                                                                             |Function Size|
 |------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
@@ -249,9 +249,9 @@
 |80114A00|BOOL|bIsLowRes|
 |80114A04|int|deflicker|
 |80114A08|int[2]|nModes|
-|80114A10|[CVideoVals[6]](#videovals)|[VideoVals](#videovals)|
-|80114AB8|[RenderParams[3]](#renderparams)|[RenderVals](#renderparams)
-|801280A0|[CHeap](#heap)|g_heap|
+|80114A10|[CVideoVals[6]](#CVideoVals)|[VideoVals](#VideoVals)|
+|80114AB8|[RenderParams[3]](#RenderParams)|[RenderVals](#RenderVals)
+|801280A0|[CHeap](#CHeap)|g_heap|
 |80131EEA|uint16_t|nController|
 |80131F94|int8_t|nJoyX|
 |80131F95|int8_t|nJoyY|
@@ -265,17 +265,17 @@
 |801393B0|uint32_t|current_waiting|
 |801393C0|uint32_t|next_waiting|
 |8013D8B0|float|refreshRate|
-|8013D8C0|[CEngineApp](#todo)|g_app
+|8013D8C0|[CEngineApp](#CEngineApp)|g_app
 |8013DC70|int|levelStatus| Members part of CScene starting here; TODO: cartograph this structure
 |8013DC74|int|bPersistentDataLoaded|
 |8013DC78|int|levelCutsceneFlags|
 |8013DD9C|uint32_t|savePersistentDataSize|
 |8013DDA0|uint32_t|gamePersistentDataSize|
-|8013DDA8|[CGameObjectInstance*](#gameobject)|pActorList|
+|8013DDA8|[CGameObjectInstance*](#CGameObjectInstance)|pActorList|
 |8013DDB0|uint32_t|nNumActors|
-|8013DDB4|[CPlayer*](#player)|pPlayer|
-|80164778|[CPlayerPool](#ppool)|playerPool|
-|801647C0|[CCameraPool](#cpool)|cameraPool|
+|8013DDB4|[CPlayer*](#CPlayer)|pPlayer|
+|80164778|[CPlayerPool](#CPlayerPool)|playerPool|
+|801647C0|[CCameraPool](#CCameraPool)|cameraPool|
 |801659B0|uint8_t|bStereo| Members part of an options struct starting here; TODO: cartograph this structure
 |801659B1|uint8_t|nMusicVolume|
 |801659B2|uint8_t|nSfxVolume|
@@ -311,34 +311,131 @@
 |80165A74|float|mpGravityScale|
 |80165A78|float|mpMovementSpeedScale|
 |80165B10|uint32_t|mpDeathmatchMusic|
-|80165B58|[COptions](#opts)|gameOptions|
+|80165B58|[COptions](#COptions)|gameOptions|
 |80166120|uint32_t|next_fields| this is graphics stuff, related to stuff around 8013; probably part of a structure
 |80166130|uint32_t|nDisplayLists|
 |80166180|uint32_t|current_finished|
 |801661E0|uint32_t|current_fields|
 
 
-## Structure Definitions
+### Structure Definitions
 
 |File|
 |----|
-|[CAnimationData.h](lib/libtengine/lib/types/CAnimationData.h) <a name="animdat"></a>|
-|[CAnimationState.h](lib/libtengine/lib/types/CAnimationState.h) <a name="animstate"></a>|
-|[CCamera.h](lib/libtengine/lib/types/CCamera.h)<a name="camera"></a>|
-|[CCameraPool.h](lib/libtengine/lib/types/CCameraPool.h) <a name="cpool"></a>|
-|[CGameObjectInstance.h](lib/libtengine/lib/types/CGameObjectInstance.h) <a name="gameobject"></a>|
-|[CHeap.h](lib/libtengine/lib/types/CHeap.h)<a name="heap"></a>|
-|[CIntelligence.h](lib/libtengine/lib/types/CIntelligence.h)<a name="intelligence"></a>|
-|[CLoaderEntry.h](lib/libtengine/lib/types/CLoaderEntry.h)<a name="loaderentry"></a>|
-|[CMatrixPool.h](lib/libtengine/lib/types/CMatrixPool.h)<a name="matpool"></a>|
-|[CMtxF.h](lib/libtengine/lib/types/CMtxF.h)<a name="mtxf"></a>|
-|[COptions.h](lib/libtengine/lib/types/COptions.h)<a name="opts"></a>|
-|[CPlayer.h](lib/libtengine/lib/types/CPlayer.h) <a name="player"></a>|
-|[CPlayerPool.h](lib/libtengine/lib/types/CCPlayerPool.h)<a name="ppool"></a>|
-|[CPlayerOptions.h](lib/libtengine/lib/types/CPlayerOptions.h) <a name="playeropts"></a>|
-|[CQuaternion.h](lib/libtengine/lib/types/CQuaternion.h) <a name="quat"></a>|
-|[CScene.h](lib/libtengine/lib/types/CScene.h) <a name="scene"></a>|
-|[CVector3.h](lib/libtengine/lib/types/CVector3.h) <a name="vector3"></a>|
-|[CVideoVals.h](lib/libtengine/lib/types/CVideoVals.h) <a name="videovals"></a>|
-|[RenderParams.h](lib/libtengine/lib/types/RenderParams.h) <a name="renderparams"></a>|
-
+|[AIFunc.h](lib/libtengine/lib/types/AIFunc.h) <a name="AIFunc"></a>|
+|[AnimInfo.h](lib/libtengine/lib/types/AnimInfo.h) <a name="AnimInfo"></a>|
+|[CActiveGridSection.h](lib/libtengine/lib/types/CActiveGridSection.h) <a name="CActiveGridSection"></a>|
+|[CActiveLink.h](lib/libtengine/lib/types/CActiveLink.h) <a name="CActiveLink"></a>|
+|[CAI.h](lib/libtengine/lib/types/CAI.h) <a name="CAI"></a>|
+|[CAIModeInfo.h](lib/libtengine/lib/types/CAIModeInfo.h) <a name="CAIModeInfo"></a>|
+|[CAmmo.h](lib/libtengine/lib/types/CAmmo.h) <a name="CAmmo"></a>|
+|[CAnimationState.h](lib/libtengine/lib/types/CAnimationState.h) <a name="CAnimationState"></a>|
+|[CAnimDrawInfo.h](lib/libtengine/lib/types/CAnimDrawInfo.h) <a name="CAnimDrawInfo"></a>|
+|[CAnimNodeInfo.h](lib/libtengine/lib/types/CAnimNodeInfo.h) <a name="CAnimNodeInfo"></a>|
+|[CAnimPool.h](lib/libtengine/lib/types/CAnimPool.h) <a name="CAnimPool"></a>|
+|[CBarrel.h](lib/libtengine/lib/types/CBarrel.h) <a name="CBarrel"></a>|
+|[CBarrelWeapon.h](lib/libtengine/lib/types/CBarrelWeapon.h) <a name="CBarrelWeapon"></a>|
+|[CBoundsRect.h](lib/libtengine/lib/types/CBoundsRect.h) <a name="CBoundsRect"></a>|
+|[CBulletHole.h](lib/libtengine/lib/types/CBulletHole.h) <a name="CBulletHole"></a>|
+|[CButton.h](lib/libtengine/lib/types/CButton.h) <a name="CButton"></a>|
+|[CCacheEntry.h](lib/libtengine/lib/types/CCacheEntry.h) <a name="CCacheEntry"></a>|
+|[CCamera.h](lib/libtengine/lib/types/CCamera.h) <a name="CCamera"></a>|
+|[CCameraPool.h](lib/libtengine/lib/types/CCameraPool.h) <a name="CCameraPool"></a>|
+|[CCameraText.h](lib/libtengine/lib/types/CCameraText.h) <a name="CCameraText"></a>|
+|[CCameraViewParams.h](lib/libtengine/lib/types/CCameraViewParams.h) <a name="CCameraViewParams"></a>|
+|[CCameraViewport.h](lib/libtengine/lib/types/CCameraViewport.h) <a name="CCameraViewport"></a>|
+|[CCollisionInfo.h](lib/libtengine/lib/types/CCollisionInfo.h) <a name="CCollisionInfo"></a>|
+|[CContState.h](lib/libtengine/lib/types/CContState.h) <a name="CContState"></a>|
+|[CDamageInfo.h](lib/libtengine/lib/types/CDamageInfo.h) <a name="CDamageInfo"></a>|
+|[CDLight.h](lib/libtengine/lib/types/CDLight.h) <a name="CDLight"></a>|
+|[CDynamicAnim.h](lib/libtengine/lib/types/CDynamicAnim.h) <a name="CDynamicAnim"></a>|
+|[CDynamicList.h](lib/libtengine/lib/types/CDynamicList.h) <a name="CDynamicList"></a>|
+|[CDynamicSimple.h](lib/libtengine/lib/types/CDynamicSimple.h) <a name="CDynamicSimple"></a>|
+|[CEngineApp.h](lib/libtengine/lib/types/CEngineApp.h) <a name="CEngineApp"></a>|
+|[CFrameData.h](lib/libtengine/lib/types/CFrameData.h) <a name="CFrameData"></a>|
+|[CFxSystem.h](lib/libtengine/lib/types/CFxSystem.h) <a name="CFxSystem"></a>|
+|[CFxTimer.h](lib/libtengine/lib/types/CFxTimer.h) <a name="CFxTimer"></a>|
+|[CGameCurve.h](lib/libtengine/lib/types/CGameCurve.h) <a name="CGameCurve"></a>|
+|[CGameDynamicLight.h](lib/libtengine/lib/types/CGameDynamicLight.h) <a name="CGameDynamicLight"></a>|
+|[CGameObjectInstance.h](lib/libtengine/lib/types/CGameObjectInstance.h) <a name="CGameObjectInstance"></a>|
+|[CGameRegion.h](lib/libtengine/lib/types/CGameRegion.h) <a name="CGameRegion"></a>|
+|[CGameRumble.h](lib/libtengine/lib/types/CGameRumble.h) <a name="CGameRumble"></a>|
+|[CGameSection.h](lib/libtengine/lib/types/CGameSection.h) <a name="CGameSection"></a>|
+|[CGameSimpleInstance.h](lib/libtengine/lib/types/CGameSimpleInstance.h) <a name="CGameSimpleInstance"></a>|
+|[CGameStaticInstance.h](lib/libtengine/lib/types/CGameStaticInstance.h) <a name="CGameStaticInstance"></a>|
+|[CGameStatus.h](lib/libtengine/lib/types/CGameStatus.h) <a name="CGameStatus"></a>|
+|[CHeap.h](lib/libtengine/lib/types/CHeap.h) <a name="CHeap"></a>|
+|[CHeapBlock.h](lib/libtengine/lib/types/CHeapBlock.h) <a name="CHeapBlock"></a>|
+|[CInstanceHeader.h](lib/libtengine/lib/types/CInstanceHeader.h) <a name="CInstanceHeader"></a>|
+|[CIntelligence.h](lib/libtengine/lib/types/CIntelligence.h) <a name="CIntelligence"></a>|
+|[CISet.h](lib/libtengine/lib/types/CISet.h) <a name="CISet"></a>|
+|[CList.h](lib/libtengine/lib/types/CList.h) <a name="CList"></a>|
+|[CLoaderEntry.h](lib/libtengine/lib/types/CLoaderEntry.h) <a name="CLoaderEntry"></a>|
+|[CLoopingSoundData.h](lib/libtengine/lib/types/CLoopingSoundData.h) <a name="CLoopingSoundData"></a>|
+|[CMap.h](lib/libtengine/lib/types/CMap.h) <a name="CMap"></a>|
+|[CMatrixPool.h](lib/libtengine/lib/types/CMatrixPool.h) <a name="CMatrixPool"></a>|
+|[CMemEntry.h](lib/libtengine/lib/types/CMemEntry.h) <a name="CMemEntry"></a>|
+|[CMenu.h](lib/libtengine/lib/types/CMenu.h) <a name="CMenu"></a>|
+|[CMenuPool.h](lib/libtengine/lib/types/CMenuPool.h) <a name="CMenuPool"></a>|
+|[CMtxF.h](lib/libtengine/lib/types/CMtxF.h) <a name="CMtxF"></a>|
+|[CNode.h](lib/libtengine/lib/types/CNode.h) <a name="CNode"></a>|
+|[CNodeList.h](lib/libtengine/lib/types/CNodeList.h) <a name="CNodeList"></a>|
+|[COnScreen.h](lib/libtengine/lib/types/COnScreen.h) <a name="COnScreen"></a>|
+|[COptions.h](lib/libtengine/lib/types/COptions.h) <a name="COptions"></a>|
+|[COverlay.h](lib/libtengine/lib/types/COverlay.h) <a name="COverlay"></a>|
+|[CParticle.h](lib/libtengine/lib/types/CParticle.h) <a name="CParticle"></a>|
+|[CParticleSystem.h](lib/libtengine/lib/types/CParticleSystem.h) <a name="CParticleSystem"></a>|
+|[CPathTrack.h](lib/libtengine/lib/types/CPathTrack.h) <a name="CPathTrack"></a>|
+|[CPlane.h](lib/libtengine/lib/types/CPlane.h) <a name="CPlane"></a>|
+|[CPlayer.h](lib/libtengine/lib/types/CPlayer.h) <a name="CPlayer"></a>|
+|[CPlayerContState.h](lib/libtengine/lib/types/CPlayerContState.h) <a name="CPlayerContState"></a>|
+|[CPlayerLoadSaveData.h](lib/libtengine/lib/types/CPlayerLoadSaveData.h) <a name="CPlayerLoadSaveData"></a>|
+|[CPlayerOptions.h](lib/libtengine/lib/types/CPlayerOptions.h) <a name="CPlayerOptions"></a>|
+|[CPlayerOverlay.h](lib/libtengine/lib/types/CPlayerOverlay.h) <a name="CPlayerOverlay"></a>|
+|[CPlayerPool.h](lib/libtengine/lib/types/CPlayerPool.h) <a name="CPlayerPool"></a>|
+|[CQuaternion.h](lib/libtengine/lib/types/CQuaternion.h) <a name="CQuaternion"></a>|
+|[CRandomShortPair.h](lib/libtengine/lib/types/CRandomShortPair.h) <a name="CRandomShortPair"></a>|
+|[CROMCorner.h](lib/libtengine/lib/types/CROMCorner.h) <a name="CROMCorner"></a>|
+|[CROMCurve.h](lib/libtengine/lib/types/CROMCurve.h) <a name="CROMCurve"></a>|
+|[CROMDynamicLight.h](lib/libtengine/lib/types/CROMDynamicLight.h) <a name="CROMDynamicLight"></a>|
+|[CROMHotPoint.h](lib/libtengine/lib/types/CROMHotPoint.h) <a name="CROMHotPoint"></a>|
+|[CROMInitialOrientation.h](lib/libtengine/lib/types/CROMInitialOrientation.h) <a name="CROMInitialOrientation"></a>|
+|[CROMLevel.h](lib/libtengine/lib/types/CROMLevel.h) <a name="CROMLevel"></a>|
+|[CROMLink.h](lib/libtengine/lib/types/CROMLink.h) <a name="CROMLink"></a>|
+|[CROMNode.h](lib/libtengine/lib/types/CROMNode.h) <a name="CROMNode"></a>|
+|[CROMNodeIndex.h](lib/libtengine/lib/types/CROMNodeIndex.h) <a name="CROMNodeIndex"></a>|
+|[CROMObjectInfo.h](lib/libtengine/lib/types/CROMObjectInfo.h) <a name="CROMObjectInfo"></a>|
+|[CROMParticle.h](lib/libtengine/lib/types/CROMParticle.h) <a name="CROMParticle"></a>|
+|[CROMParticleColor.h](lib/libtengine/lib/types/CROMParticleColor.h) <a name="CROMParticleColor"></a>|
+|[CROMParticleDir.h](lib/libtengine/lib/types/CROMParticleDir.h) <a name="CROMParticleDir"></a>|
+|[CROMParticleGeneral.h](lib/libtengine/lib/types/CROMParticleGeneral.h) <a name="CROMParticleGeneral"></a>|
+|[CROMParticleImpact.h](lib/libtengine/lib/types/CROMParticleImpact.h) <a name="CROMParticleImpact"></a>|
+|[CROMParticleOffset.h](lib/libtengine/lib/types/CROMParticleOffset.h) <a name="CROMParticleOffset"></a>|
+|[CROMParticlePhysics.h](lib/libtengine/lib/types/CROMParticlePhysics.h) <a name="CROMParticlePhysics"></a>|
+|[CROMParticleRot.h](lib/libtengine/lib/types/CROMParticleRot.h) <a name="CROMParticleRot"></a>|
+|[CROMParticleScale.h](lib/libtengine/lib/types/CROMParticleScale.h) <a name="CROMParticleScale"></a>|
+|[CROMParticleSineWave.h](lib/libtengine/lib/types/CROMParticleSineWave.h) <a name="CROMParticleSineWave"></a>|
+|[CROMRumble.h](lib/libtengine/lib/types/CROMRumble.h) <a name="CROMRumble"></a>|
+|[CROMSkyLayer.h](lib/libtengine/lib/types/CROMSkyLayer.h) <a name="CROMSkyLayer"></a>|
+|[CROMSwoosh.h](lib/libtengine/lib/types/CROMSwoosh.h) <a name="CROMSwoosh"></a>|
+|[CROMSwooshPoint.h](lib/libtengine/lib/types/CROMSwooshPoint.h) <a name="CROMSwooshPoint"></a>|
+|[CROMWarpPoint.h](lib/libtengine/lib/types/CROMWarpPoint.h) <a name="CROMWarpPoint"></a>|
+|[CRumblePool.h](lib/libtengine/lib/types/CRumblePool.h) <a name="CRumblePool"></a>|
+|[CScene.h](lib/libtengine/lib/types/CScene.h) <a name="CScene"></a>|
+|[CShake.h](lib/libtengine/lib/types/CShake.h) <a name="CShake"></a>|
+|[CShakeAxis.h](lib/libtengine/lib/types/CShakeAxis.h) <a name="CShakeAxis"></a>|
+|[CSimplePool.h](lib/libtengine/lib/types/CSimplePool.h) <a name="CSimplePool"></a>|
+|[CSkyLayer.h](lib/libtengine/lib/types/CSkyLayer.h) <a name="CSkyLayer"></a>|
+|[CSkySystem.h](lib/libtengine/lib/types/CSkySystem.h) <a name="CSkySystem"></a>|
+|[CSun.h](lib/libtengine/lib/types/CSun.h) <a name="CSun"></a>|
+|[CSunFrameData.h](lib/libtengine/lib/types/CSunFrameData.h) <a name="CSunFrameData"></a>|
+|[CSwoosh.h](lib/libtengine/lib/types/CSwoosh.h) <a name="CSwoosh"></a>|
+|[CSwooshEdge.h](lib/libtengine/lib/types/CSwooshEdge.h) <a name="CSwooshEdge"></a>|
+|[CUSet.h](lib/libtengine/lib/types/CUSet.h) <a name="CUSet"></a>|
+|[CVector3.h](lib/libtengine/lib/types/CVector3.h) <a name="CVector3"></a>|
+|[CVideoVals.h](lib/libtengine/lib/types/CVideoVals.h) <a name="CVideoVals"></a>|
+|[CWeapon.h](lib/libtengine/lib/types/CWeapon.h) <a name="CWeapon"></a>|
+|[CWeaponAmmoInfo.h](lib/libtengine/lib/types/CWeaponAmmoInfo.h) <a name="CWeaponAmmoInfo"></a>|
+|[CWeaponInfo.h](lib/libtengine/lib/types/CWeaponInfo.h) <a name="CWeaponInfo"></a>|
+|[health_helper.h](lib/libtengine/lib/types/health_helper.h) <a name="health_helper"></a>|
+|[RenderParams.h](lib/libtengine/lib/types/RenderParams.h) <a name="RenderParams"></a>|

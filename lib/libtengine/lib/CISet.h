@@ -16,6 +16,25 @@ asm("CISet__GetBlock = 0x00232718");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 // length returned in pLength, v0 is address of block
@@ -34,6 +53,25 @@ asm("CISet__GetBlockAndSize = 0x00282E78");
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
 #endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
+#endif
 #endif
 
 extern void* CISet__GetROMAddress(void* pISet, void* pBase, int nBlock);
@@ -50,6 +88,25 @@ asm("CISet__GetROMAddress = 0x00282ED8");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
@@ -68,6 +125,25 @@ asm("CISet__GetROMAddressAndSize = 0x00282EEC");
 #warning "This does not yet support N4TKER10!"
 #elif RELEASE_N4TKER09
 #warning "This does not yet support N4TKER09!"
+#endif
+
+#endif
+
+#ifdef GAME_TUROK2
+#ifdef RELEASE_US
+#warning "This does not yet support US!"
+#elif RELEASE_US11
+#warning "This does not yet support US1.1!"
+#elif RELEASE_EU
+#warning "This does not yet support EU!"
+#elif RELEASE_EX
+#warning "This does not yet support EX!"
+#elif RELEASE_GE
+#warning "This does not yet support GE!"
+#elif RELEASE_KIOSKUS
+#warning "This does not yet support Kiosk US!"
+#elif RELEASE_KIOSKEU
+#warning "This does not yet support Kiosk EU!"
 #endif
 #endif
 
